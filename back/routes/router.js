@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import productRoutes from './productRoutes.js'; // Asegúrate de que esta ruta sea correcta
+import productRoutes from './productRoutes.js';
+import authRoutes from './authRoutes.js';
 
 const router = Router();
 
-// Rutas de productos
-router.use('/api/products', productRoutes); // Esto significa que tus rutas de productos estarán en /api/products
+router.use('/products', productRoutes); // Cambiado a use
+router.use('/auth', authRoutes);
 
 export default router;
