@@ -1,0 +1,46 @@
+.detail-container {
+    padding: 20px;
+    max-width: 800px; /* Ancho máximo para el contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    background-color: #fff; /* Fondo blanco para el detalle */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.detail-name {
+    color: #2a2977; /* Color principal para el nombre del producto */
+    font-size: 24px; /* Tamaño de fuente para el nombre */
+}
+
+.detail-image {
+    max-width: 100%; /* Imagen responsiva */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    margin: 20px 0; /* Margen vertical */
+}
+
+.detail-price {
+    color: #8886bf; /* Color secundario para el precio */
+    font-size: 20px; /* Tamaño de fuente para el precio */
+    font-weight: bold; /* Negrita */
+}
+
+.detail-description {
+    color: #666; /* Color para la descripción */
+    font-size: 16px; /* Tamaño de fuente para la descripción */
+    margin: 20px 0; /* Margen vertical */
+}
+
+.buy-button {
+    background-color: #2a2977; /* Color principal para el botón */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.buy-button:hover {
+    background-color: #8886bf; /* Color secundario al pasar el mouse */
+}

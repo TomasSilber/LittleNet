@@ -1,9 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-// Puedes añadir slices aquí si los tienes
+import { configureStore } from '@reduxjs/toolkit'; 
+import { thunk } from 'redux-thunk';
+import { productReducer } from './reducer/reducer'; 
+
 const store = configureStore({
-    reducer: {
-        // Añadir reducers aquí si es necesario
-    }
+    reducer: productReducer, 
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 });
 
 export default store;

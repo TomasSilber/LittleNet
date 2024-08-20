@@ -1,26 +1,65 @@
+/* Estilo Global */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Fuente básica */
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9; /* Fondo suave */
+    color: #2a2977; /* Color principal para el texto */
 }
 
+/* Estilo para todos los elementos */
+* {
+    box-sizing: inherit;
+}
+
+/* Estilos para encabezados */
 h1, h2 {
-    color: #333;
+    color: #2a2977; /* Color principal para los encabezados */
+    margin: 0; /* Eliminar márgenes por defecto */
 }
 
+/* Estilos para contenedores */
 div {
     padding: 20px;
 }
 
+/* Estilos para botones */
 button {
-    background-color: #25D366; /* WhatsApp green */
-    color: white;
+    background-color: #2a2977; /* Color principal para botones */
+    color: white; /* Texto blanco */
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transición suave */
 }
 
 button:hover {
-    background-color: #1DA851;
+    background-color: #8886bf; /* Color secundario al pasar el mouse */
+}
+
+/* Estilo de enlaces */
+a {
+    text-decoration: none; /* Sin subrayado */
+    color: #2a2977; /* Color principal para enlaces */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+/* Estilos para listas */
+ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+li {
+    padding: 10px; /* Espaciado en los elementos de la lista */
+    border-bottom: 1px solid #ddd; /* Línea divisoria */
+}
+
+li:last-child {
+    border-bottom: none; /* Elimina la línea en el último elemento */
 }

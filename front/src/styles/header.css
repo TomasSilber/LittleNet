@@ -1,0 +1,54 @@
+.header {
+    position: absolute; /* Cambia a posición absoluta */
+    top: 0; /* Alinea al top de la ventana */
+    left: 0; /* Alinea a la izquierda */
+    right: 0; /* Asegura que ocupe todo el ancho */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    background-color: #2c37ca; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    border: none; /* Elimina los bordes */
+    box-shadow: none; /* Elimina cualquier sombra */
+    margin: 0; /* Elimina márgenes */
+    
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px; /* Espaciado interno */
+}
+
+
+
+
+.logo {
+    height: 50px; /* Ajusta según el tamaño de tu logo */
+}
+
+.search-bar {
+    flex: 1; /* Ocupa el espacio disponible */
+    margin: 0 20px; /* Espacio a los lados */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.social-icons a {
+    color: #fff; /* Color de los íconos */
+    margin-left: 15px; /* Espacio entre íconos */
+    font-size: 20px; /* Tamaño de los íconos */
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    background-color: #9391b9; /* Color de fondo de la barra de filtros */
+    padding: 10px 0; /* Espaciado interno */
+}
+
+.filter-bar span {
+    margin: 0 15px; /* Espacio entre filtros */
+    cursor: pointer; /* Cambia el cursor al pasar */
+}

@@ -1,0 +1,72 @@
+/* Eliminado: No es necesario porque la búsqueda y filtrado ahora están en el header */
+
+/* Estructura de la lista de productos */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Distribuye los productos en columnas de tamaño flexible */
+    gap: 20px; /* Espacio entre los productos */
+    margin-top: 80px; /* Espacio adicional superior */
+}
+
+/* Estilos para cada producto */
+.product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px; /* Bordes redondeados para cada producto */
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-details {
+    flex: 1; /* Ocupa el espacio restante en la columna */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%; /* Asegura que el contenido interno ocupe todo el ancho */
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px; /* Espacio entre la descripción y el footer */
+}
+
+/* Estilos de los textos */
+.product-name {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #666;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Estilos del botón */
+.product-button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px; /* Bordes redondeados del botón */
+}
+
+.product-button:hover {
+    background-color: #218838;
+}

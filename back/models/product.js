@@ -1,3 +1,4 @@
+// models/product.js
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 
@@ -23,18 +24,18 @@ const Product = sequelize.define('Product', {
         type: DataTypes.STRING,
         allowNull: true,
     },
-    stock: {
-        type: DataTypes.INTEGER,
+    category: {
+        type: DataTypes.STRING,
         allowNull: true,
     },
-    isService: {
+    active: { 
         type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: false,
+        defaultValue: true, 
     },
 }, {
     tableName: 'Products',
-    timestamps: false, // Desactivar timestamps ya que no los estamos utilizando
+    timestamps: false, 
 });
+
 
 export default Product;

@@ -1,16 +1,26 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import { fileURLToPath } from 'url'; // Importa para simular __dirname
+import path from 'path'; // Importa el módulo path
 import sequelize from './config/database.js';
 import router from './routes/router.js';
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
+
+// Crear una variable que simule __dirname en módulos ES
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(cors());
 app.use(express.json());
+
+// Configuración para servir archivos estáticos de la carpeta 'uploads'
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.use('/api', router);
 
 // Middleware de manejo de errores
@@ -25,7 +35,7 @@ app.use((err, req, res, next) => {
 
 const initializeDatabase = async () => {
     try {
-        await sequelize.sync({ force: false});
+        await sequelize.sync({ force: false });
         console.log('Database synced successfully.');
     } catch (error) {
         console.error('Error syncing database:', error);

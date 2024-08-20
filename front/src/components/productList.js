@@ -1,44 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import "../styles/productList.css";
 
-const ProductList = () => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+const ProductList = ({ products }) => {
+    const navigate = useNavigate(); // Inicializa useNavigate
 
-    useEffect(() => {
-        async function fetchProducts() {
-            try {
-                const response = await axios.get('/api/products');
-                setProducts(response.data);
-            } catch (error) {
-                setError('Error fetching products');
-                console.error('Error fetching products:', error);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        fetchProducts();
-    }, []);
-
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>{error}</p>;
+    const handleProductClick = (product) => {
+        navigate(`/product/${product.id}`); // Redirigir a la página de detalles del producto
+    };
 
     return (
-        <div>
-            <h1>Our Products</h1>
-            <div>
-                {products.map(product => (
-                    <div key={product.id}>
-                        <h2>{product.name}</h2>
-                        <p>{product.description}</p>
-                        <p>Price: ${product.price}</p>
-                        {product.photo && <img src={product.photo} alt={product.name} />}
-                        <button onClick={() => window.open(`https://wa.me/your-phone-number?text=I%20want%20to%20buy%20${product.name}`, '_blank')}>Buy</button>
-                    </div>
-                ))}
-            </div>
+        <div className="product-list">
+            {products.map(product => (
+                <div 
+                    key={product.id} 
+                    className="product-item" 
+                    onClick={() => handleProductClick(product)}
+                >
+                    <img 
+                        src={product.photo ? `/uploads/${product.photo.replace(/\\/g, '/')}` : '/default-image.jpg'} 
+                        alt={product.name} 
+                        className="product-image" 
+/>
+
+                    <h2 className="product-name">{product.name}</h2>
+                    <span className="product-price">${product.price}</span>
+                </div>
+            ))}
         </div>
     );
 };
